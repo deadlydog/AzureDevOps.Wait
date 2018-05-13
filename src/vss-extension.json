@@ -15,9 +15,10 @@
     ],
     "tags": [
         "utility",
-        "task",
-        "scheduled task",
-        "task scheduler"
+        "wait",
+        "suspend",
+        "sleep",
+        "pause"
     ],
     "content": {
         "details": {
