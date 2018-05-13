@@ -1,0 +1,59 @@
+{
+    "manifestVersion": 1,
+    "id": "WaitBuildAndReleaseTask",
+    "name": "Wait",
+    "version": "0.0.1",
+    "publisher": "deadlydog",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "description": "Task for suspending the workflow for the specified amount of time.",
+    "categories": [
+        "Build and release"
+    ],
+    "tags": [
+        "utility",
+        "task",
+        "scheduled task",
+        "task scheduler"
+    ],
+    "content": {
+        "details": {
+            "path": "MarketplaceDocs/Overview.md"
+        }
+    },
+    "links": {
+        "getstarted": {
+            "uri": "https://github.com/deadlydog/VSTS.Wait/blob/master/ReadMe.md"
+        },
+        "license": {
+            "uri": "https://github.com/deadlydog/VSTS.Wait/blob/master/License.md"
+        }
+    },
+    "icons": {
+        "default": "Images/ExtensionIcon.png"
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/deadlydog/VSTS.Wait"
+    },
+    "files": [
+        {
+            "path": "Tasks/Wait"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "Wait",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "Tasks/Wait"
+            }
+        }
+    ]
+}
