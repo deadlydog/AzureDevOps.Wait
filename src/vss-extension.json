@@ -20,7 +20,6 @@
         "sleep",
         "pause",
         "delay",
-        "suspend",
         "stall"
     ],
     "content": {
