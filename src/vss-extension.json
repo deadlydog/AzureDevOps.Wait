@@ -19,7 +19,9 @@
         "suspend",
         "sleep",
         "pause",
-        "delay"
+        "delay",
+        "suspend",
+        "stall"
     ],
     "content": {
         "details": {
