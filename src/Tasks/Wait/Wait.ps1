@@ -16,7 +16,7 @@ Process
 		$secondsToSleepFor = $Value * 60
 	}
 
-	Write-Verbose "About to sleep thread for $secondsToSleepFor seconds." -Verbose
+	Write-Output "About to sleep for $secondsToSleepFor seconds..."
 	Start-Sleep -Seconds $secondsToSleepFor
-	Write-Verbose "Finished sleeping for $secondsToSleepFor seconds." -Verbose
+	Write-Output "Finished sleeping for $secondsToSleepFor seconds."
 }
