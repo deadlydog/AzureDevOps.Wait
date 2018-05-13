@@ -16,13 +16,6 @@
         "Patch": 0
     },
     "instanceNameFormat": "Wait for $(Value) $(Unit)",
-    "groups": [
-        {
-            "name": "advanced",
-            "displayName": "Advanced",
-            "isExpanded": false
-        }
-    ],
     "inputs": [
         {
             "name": "Value",
