@@ -59,5 +59,8 @@
                 "name": "Tasks/Wait"
             }
         }
+    ],
+    "galleryFlags": [
+        "Preview"
     ]
 }
