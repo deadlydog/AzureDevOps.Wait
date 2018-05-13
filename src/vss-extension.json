@@ -9,7 +9,7 @@
             "id": "Microsoft.VisualStudio.Services"
         }
     ],
-    "description": "Task for suspending a Build or Release workflow for the specified amount of time.",
+    "description": "Provides a task for suspending a Build or Release workflow for the specified amount of time.",
     "categories": [
         "Build and release"
     ],
