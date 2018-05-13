@@ -18,7 +18,8 @@
         "wait",
         "suspend",
         "sleep",
-        "pause"
+        "pause",
+        "delay"
     ],
     "content": {
         "details": {
