@@ -3,7 +3,7 @@
     "name": "Wait",
     "friendlyName": "Wait",
     "description": "Suspends the workflow for the specified amount of time",
-    "helpMarkDown": "https://github.com/deadlydog/VSTS.Wait",
+    "helpMarkDown": "[More Information](https://github.com/deadlydog/VSTS.Wait)",
     "category": "Utility",
     "visibility": [
         "Build",
