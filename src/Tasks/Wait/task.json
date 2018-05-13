@@ -23,7 +23,7 @@
             "label": "Value",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "The number of seconds/minutes to suspend the workflow for. Must be an integer greater than zero."
+            "helpMarkDown": "The number of milliseconds/seconds/minutes to suspend the workflow for. Must be an integer greater than zero."
         },
         {
             "name": "Unit",
@@ -31,8 +31,9 @@
             "label": "Unit",
             "defaultValue": "Seconds",
             "required": true,
-            "helpMarkDown": "The units (seconds or minutes) the Value corresponds to.",
+            "helpMarkDown": "The units (milliseconds, seconds, or minutes) the Value corresponds to.",
             "options": {
+                "Milliseconds": "Milliseconds",
                 "Seconds": "Seconds",
                 "Minutes": "Minutes"
             }
