@@ -19,11 +19,11 @@
     "inputs": [
         {
             "name": "Value",
-            "type": "int",
+            "type": "string",
             "label": "Value",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "The number of seconds/minutes to suspend the workflow for."
+            "helpMarkDown": "The number of seconds/minutes to suspend the workflow for. Must be an integer greater than zero."
         },
         {
             "name": "Unit",
@@ -41,7 +41,6 @@
     "execution": {
         "PowerShell": {
             "target": "$(currentDirectory)/Wait.ps1",
-            "argumentFormat": "",
             "workingDirectory": "$(currentDirectory)"
         }
     }
