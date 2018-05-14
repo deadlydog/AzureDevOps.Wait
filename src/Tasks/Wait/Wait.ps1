@@ -12,9 +12,9 @@ Process
 {
 	[int] $millisecondsToSleepFor = Convert-UnitToMilliseconds -Unit $Unit -Value $Value
 
-	Write-Output "About to sleep for $Value $Unit..."
+	Write-Output "About to wait for $Value $Unit..."
 	Start-Sleep -Milliseconds $millisecondsToSleepFor
-	Write-Output "Finished sleeping for $Value $Unit."
+	Write-Output "Finished waiting for $Value $Unit."
 }
 
 Begin
