@@ -20,10 +20,6 @@ Process
 Begin
 {
 	$THIS_SCRIPTS_DIRECTORY_PATH = Split-Path $script:MyInvocation.MyCommand.Path
-	$tasksDirectoryPath = Split-Path -Path $THIS_SCRIPTS_DIRECTORY_PATH -Parent
-	$srcDirectoryPath = Split-Path -Path $tasksDirectoryPath -Parent
-	$codeDirectoryPath = Join-Path -Path $srcDirectoryPath -ChildPath 'code'
-	$convertUnitModuleFilePath = Join-Path -Path $codeDirectoryPath -ChildPath 'Convert-Unit.psm1'
-
+	$convertUnitModuleFilePath = Join-Path -Path $THIS_SCRIPTS_DIRECTORY_PATH -ChildPath 'Convert-Unit.psm1'
 	Import-Module -Name $convertUnitModuleFilePath
 }
