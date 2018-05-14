@@ -1,7 +1,7 @@
 param
 (
-	[parameter(Mandatory=$true,HelpMessage="The units (Milliseconds, Seconds, or Minutes) that the provided Value is in.")]
-	[ValidateSet('Milliseconds', 'Seconds', 'Minutes')]
+	[parameter(Mandatory=$true,HelpMessage="The units (milliseconds, seconds, or minutes) that the provided Value is in.")]
+	[ValidateSet('milliseconds', 'seconds', 'minutes')]
 	[string] $Unit,
 
 	[parameter(Mandatory=$true,HelpMessage="The number of units to wait for.")]

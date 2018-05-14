@@ -2,8 +2,8 @@ function Convert-UnitToMilliseconds
 {
 	param
 	(
-		[parameter(Mandatory=$true,HelpMessage="The units (Milliseconds, Seconds, or Minutes) that the provided Value is in.")]
-		[ValidateSet('Milliseconds', 'Seconds', 'Minutes')]
+		[parameter(Mandatory=$true,HelpMessage="The units (milliseconds, seconds, or minutes) that the provided Value is in.")]
+		[ValidateSet('milliseconds', 'seconds', 'minutes')]
 		[string] $Unit,
 
 		[parameter(Mandatory=$true,HelpMessage="The number of units to wait for.")]
@@ -13,9 +13,9 @@ function Convert-UnitToMilliseconds
 	[int] $milliseconds = 0
 	switch ($Unit)
 	{
-		'Milliseconds' { $milliseconds = $Value }
-		'Seconds' { $milliseconds = (Convert-SecondsToMilliseconds -seconds $Value) }
-		'Minutes' { $milliseconds = (Convert-MinutesToMilliseconds -minutes $Value) }
+		'milliseconds' { $milliseconds = $Value }
+		'seconds' { $milliseconds = (Convert-SecondsToMilliseconds -seconds $Value) }
+		'minutes' { $milliseconds = (Convert-MinutesToMilliseconds -minutes $Value) }
 	}
 	return $milliseconds
 }

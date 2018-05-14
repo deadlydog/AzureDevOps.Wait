@@ -5,12 +5,12 @@ Import-Module -Name $filePathToTest
 
 Describe 'Convert-UnitToMilliseconds' {
 	It 'Should convert seconds properly' {
-		$milliseconds = Convert-UnitToMilliseconds -Unit 'Seconds' -Value 2
+		$milliseconds = Convert-UnitToMilliseconds -Unit 'seconds' -Value 2
 		$milliseconds | Should -Be 2000
 	}
 
 	It 'Should convert minutes properly' {
-		$milliseconds = Convert-UnitToMilliseconds -Unit 'Minutes' -Value 2
+		$milliseconds = Convert-UnitToMilliseconds -Unit 'minutes' -Value 2
 		$milliseconds | Should -Be 120000
 	}
 }

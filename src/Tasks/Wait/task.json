@@ -29,13 +29,13 @@
             "name": "Unit",
             "type": "pickList",
             "label": "Unit",
-            "defaultValue": "Seconds",
+            "defaultValue": "seconds",
             "required": true,
             "helpMarkDown": "The units (milliseconds, seconds, or minutes) the Value corresponds to.",
             "options": {
-                "Milliseconds": "Milliseconds",
-                "Seconds": "Seconds",
-                "Minutes": "Minutes"
+                "milliseconds": "Milliseconds",
+                "seconds": "Seconds",
+                "minutes": "Minutes"
             }
         }
     ],
