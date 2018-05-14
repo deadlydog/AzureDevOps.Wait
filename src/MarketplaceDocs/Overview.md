@@ -5,4 +5,4 @@ This extension provides a build/release task that can be used to pause the workf
 
 ## Usage
 
-Simply specify the number of seconds or minutes to wait for, and the workflow will pause for that amount of time before continuing.
+Simply specify the number of milliseconds, seconds, or minutes to wait for, and the workflow will pause for that amount of time before continuing.
