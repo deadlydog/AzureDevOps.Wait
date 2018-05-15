@@ -1,7 +1,7 @@
 $THIS_SCRIPTS_PATH = $PSCommandPath
 $filePathToTest = $THIS_SCRIPTS_PATH.Replace('.Tests.ps1', '.psm1')
 Write-Verbose "Dot-sourcing the file '$filePathToTest' to run tests against it." -Verbose
-Import-Module -Name $filePathToTest
+Import-Module -Name $filePathToTest -Force
 
 Describe 'Convert-UnitToMilliseconds' {
 	It 'Should convert seconds properly' {
