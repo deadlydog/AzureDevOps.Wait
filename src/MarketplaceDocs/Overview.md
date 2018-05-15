@@ -1,13 +1,13 @@
-# Wait for Build and Release workflows
+# Wait task for Build and Release pipelines
 
-This extension provides a build/release task that can be used to pause the workflow for the specified amount of time.
+This extension provides a task that can be used to pause the Build or Release process for the specified amount of time.
 
-If you find this extension useful, please submit a rating / review for it.
+If you find this extension useful, please rate / review it.
 
 
 ## Usage
 
-Simply specify the number of milliseconds, seconds, or minutes to wait for, and the workflow will pause for that amount of time before continuing.
+Simply specify the number of milliseconds, seconds, or minutes to wait for, and the process will pause for that amount of time before continuing.
 
 
 ## Issues and Feature Requests
