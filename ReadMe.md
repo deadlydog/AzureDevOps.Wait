@@ -15,6 +15,13 @@ You specify the number of milliseconds, seconds, or minutes that you want the pr
 If you find any problems with this extension, please [create an Issue for it][GitHubIssuesUrl].
 
 
+## Donate
+
+Buy me a coffee for providing this extension for free :)
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CZP8CU53RJ29W)
+
+
 <!-- Links -->
 [ScreenshotImage]: src/Images/Screenshot.png
 [VstsMarketplaceExtensionUrl]: https://marketplace.visualstudio.com/items?itemName=deadlydog.WaitBuildAndReleaseTask

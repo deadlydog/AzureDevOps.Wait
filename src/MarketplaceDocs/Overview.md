@@ -15,5 +15,12 @@ Simply specify the number of milliseconds, seconds, or minutes to wait for, and 
 If you find a problem with this extension, or would like additional functionality added to it, [create a new GitHub Issue][GitHubIssuesUrl] with your feedback.
 
 
+## Donate
+
+Buy me a coffee for providing this extension for free :)
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CZP8CU53RJ29W)
+
+
 <!-- Links -->
 [GitHubIssuesUrl]: https://github.com/deadlydog/VSTS.Wait/issues
