@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "WaitBuildAndReleaseTask",
   "name": "Wait",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "deadlydog",
   "targets": [
     {
