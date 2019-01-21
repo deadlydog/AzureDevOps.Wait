@@ -3,7 +3,7 @@
   "name": "Wait",
   "friendlyName": "Wait",
   "description": "Suspends the process for the specified amount of time",
-"helpMarkDown": "[More Information](https://github.com/deadlydog/VSTS.Wait)",
+"helpMarkDown": "[More Information](https://github.com/deadlydog/AzureDevOps.Wait)",
   "category": "Utility",
   "visibility": [
     "Build",

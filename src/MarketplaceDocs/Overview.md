@@ -23,4 +23,4 @@ Buy me a poutine for providing this extension for free :)
 
 
 <!-- Links -->
-[GitHubIssuesUrl]: https://github.com/deadlydog/VSTS.Wait/issues
+[GitHubIssuesUrl]: https://github.com/deadlydog/AzureDevOps.Wait/issues
