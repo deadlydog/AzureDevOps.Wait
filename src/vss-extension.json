@@ -11,7 +11,7 @@
   ],
   "description": "A task for suspending a Build or Release process for the specified amount of time.",
   "categories": [
-    "Build and release"
+    "Azure Pipelines"
   ],
   "tags": [
     "utility",
