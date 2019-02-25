@@ -6,9 +6,6 @@ This [Azure DevOps (i.e. TFS) extension][ExtensionInAzureDevOpsMarketplaceUrl] p
 
 If you find this extension useful, please [rate and review it][ExtensionRatingAndReviewInAzureDevOpsMarketplaceUrl].
 
-Current build status: [![Build Status](https://dev.azure.com/deadlydog/OpenSource/_apis/build/status/AzureDevOps.Wait?branchName=master)](https://dev.azure.com/deadlydog/OpenSource/_build/latest?definitionId=21&branchName=master)
-[![Deployment Status](https://vsrm.dev.azure.com/deadlydog/_apis/public/Release/badge/baf297a4-1582-49bd-b9ca-6d38492faafa/3/3)](https://dev.azure.com/deadlydog/OpenSource/_release?definitionId=3)
-
 ## Usage
 
 Simply specify the number of milliseconds, seconds, or minutes to wait for, and the process will pause for that amount of time before continuing.
