@@ -14,6 +14,8 @@ Simply specify the number of milliseconds, seconds, or minutes to wait for, and 
 
 If you find a problem with this extension, or would like additional functionality added to it, [create a new GitHub Issue][ExtensionGitHubRepositoryIssuesUrl] with your feedback.
 
+You can also [view the change log here][ExtensionChangeLogUrl].
+
 ## Donate
 
 Buy me a poutine for providing this extension open source and for free :)
@@ -22,5 +24,6 @@ Buy me a poutine for providing this extension open source and for free :)
 
 <!-- Links -->
 [ExtensionInAzureDevOpsMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=deadlydog.WaitBuildAndReleaseTask
-[ExtensionGitHubRepositoryIssuesUrl]: https://github.com/deadlydog/AzureDevOps.Wait/issues
 [ExtensionRatingAndReviewInAzureDevOpsMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=deadlydog.WaitBuildAndReleaseTask#review-details
+[ExtensionGitHubRepositoryIssuesUrl]: https://github.com/deadlydog/AzureDevOps.Wait/issues
+[ExtensionChangeLogUrl]: https://github.com/deadlydog/AzureDevOps.Wait/blob/master/docs/ChangeLog.md
