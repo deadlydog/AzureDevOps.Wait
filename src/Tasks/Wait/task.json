@@ -11,9 +11,9 @@
   ],
   "author": "Daniel Schroeder",
   "version": {
-    "Major": 1,
+    "Major": 0,
     "Minor": 0,
-    "Patch": 4
+    "Patch": 0
   },
   "instanceNameFormat": "Wait for $(Value) $(Unit)",
   "inputs": [
