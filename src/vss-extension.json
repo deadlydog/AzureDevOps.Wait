@@ -9,7 +9,7 @@
       "id": "Microsoft.VisualStudio.Services"
     }
   ],
-  "description": "A task for suspending a Build or Release process for the specified amount of time.",
+  "description": "Suspend a Build or Release pipeline for the specified amount of time.",
   "categories": [
     "Azure Pipelines"
   ],
