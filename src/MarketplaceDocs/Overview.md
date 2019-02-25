@@ -2,6 +2,8 @@
 
 This extension provides a task that can be used to pause the Build or Release process for the specified amount of time.
 
+This extension currently on supports Windows agents, but will also support Linux / Mac agents in the future.
+
 If you find this extension useful, please rate / review it.
 
 ## Usage

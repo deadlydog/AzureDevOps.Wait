@@ -4,6 +4,8 @@ This is an Azure DevOps extension that allows you to pause a build or release fl
 
 You specify the number of milliseconds, seconds, or minutes that you want the process to wait for, and it will pause for that length of time.
 
+This extension currently on supports Windows agents, but will also support Linux / Mac agents in the future.
+
 ## Screenshot
 
 ![Screenshot][ScreenshotImage]
