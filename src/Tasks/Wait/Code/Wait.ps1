@@ -12,9 +12,14 @@ Process
 {
 	[int] $millisecondsToSleepFor = Convert-UnitToMilliseconds -Unit $Unit -Value $Value
 
-	Write-Output "About to wait for $Value $Unit..."
+	[datetime] $currentTime = Get-Date
+	[datetime] $sleepUntilTime = $currentTime.AddMilliseconds($millisecondsToSleepFor)
+
+	Write-Output "[$currentTime] About to wait for $Value $Unit. Will resume at $sleepUntilTime..."
 	Start-Sleep -Milliseconds $millisecondsToSleepFor
-	Write-Output "Finished waiting for $Value $Unit."
+
+	$currentTime = Get-Date
+	Write-Output "[$currentTime] Finished waiting for $Value $Unit."
 }
 
 Begin
