@@ -13,9 +13,15 @@ Current build status: [![Build Status](https://dev.azure.com/deadlydog/OpenSourc
 
 Simply specify the number of milliseconds, seconds, or minutes to wait for, and the process will pause for that amount of time before continuing.
 
-## Screenshot
+## Screenshots
 
-![Screenshot][ScreenshotImage]
+Task that waits for 5 seconds:
+
+![Task][TaskImage]
+
+Output of task that waits for 2 minutes:
+
+![OutputImage]
 
 ## Issues
 
@@ -30,7 +36,8 @@ Buy me a poutine for providing this extension open source and for free :)
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CZP8CU53RJ29W)
 
 <!-- Links -->
-[ScreenshotImage]: src/Images/Screenshot.png
+[TaskImage]: src/Images/Task.png
+[OutputImage]: src/Images/Output.png
 [ExtensionInAzureDevOpsMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=deadlydog.WaitBuildAndReleaseTask
 [ExtensionRatingAndReviewInAzureDevOpsMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=deadlydog.WaitBuildAndReleaseTask#review-details
 [ExtensionGitHubRepositoryIssuesUrl]: https://github.com/deadlydog/AzureDevOps.Wait/issues

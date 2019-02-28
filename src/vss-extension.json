@@ -40,8 +40,11 @@
   },
   "screenshots": [
     {
-      "path": "Images/Screenshot.png"
-    }
+      "path": "Images/Task.png"
+		},
+		{
+			"path": "Images/Output.png"
+		}
   ],
   "repository": {
     "type": "git",
