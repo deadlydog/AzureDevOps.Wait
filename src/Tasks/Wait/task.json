@@ -41,7 +41,8 @@
   ],
   "execution": {
     "PowerShell3": {
-      "target": "Code/Wait.ps1"
+      "target": "Code/Wait.ps1",
+      "workingDirectory": "$(currentDirectory)/Code"
     }
   }
 }
