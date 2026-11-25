@@ -2,11 +2,24 @@
 
 ## Automated builds and deployment
 
-The building and publishing of this extension is fully automated via an Azure DevOps pipeline.
+The building and publishing of this extension is done via Azure DevOps pipelines.
 
 Every time a change is committed to the `master` branch [a new build][AzureDevOpsBuildPipelineUrl] is made.
 
 If the build succeeds, [a new release][AzureDevOpsReleasePipelineUrl] will automatically be created which will publish the new version to [the Azure DevOps marketplace][ExtensionsAzureDevOpsMarketplaceUrl].
+
+### Required build pipeline change for the TypeScript task
+
+**Important:** The task is now written in TypeScript, but the classic build pipeline has not been updated for it yet.
+It still runs the old `Pester Test Runner` step and packages the VSIX without building the task, so the VSIX it produces would not contain the compiled task or its `node_modules` dependencies.
+Do not rely on the automated build and release to publish working versions of the extension until the pipeline has been updated as follows:
+
+1. Remove the `Pester Test Runner` step (there are no longer any Pester tests).
+1. Before the `Package Extension into a VSIX file` step, add an `npm` step (or a command line step) that runs `npm run package` with the working directory set to `src\Tasks\Wait`.
+   This installs the dependencies, compiles the TypeScript, runs the tests (failing the build if any fail), and removes the devDependencies so only runtime dependencies are packaged.
+   The agent needs Node.js 20 or later; add a `Use Node.js` step before it if required.
+
+The `Publish Test Results` and `Publish code coverage` steps were for the Pester output and no longer find any files; they can be removed.
 
 ## Manual builds and deployments
 
