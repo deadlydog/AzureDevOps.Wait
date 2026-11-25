@@ -15,6 +15,7 @@
     "Minor": 0,
     "Patch": 0
   },
+  "minimumAgentVersion": "2.206.1",
   "instanceNameFormat": "Wait for $(Value) $(Unit)",
   "inputs": [
     {
@@ -40,11 +41,11 @@
     }
   ],
   "execution": {
-    "PowerShell3": {
-      "target": "task.ps1",
-      "platforms": [
-      	"windows"
-      ]
+    "Node20_1": {
+      "target": "dist/src/index.js"
+    },
+    "Node16": {
+      "target": "dist/src/index.js"
     }
   }
 }

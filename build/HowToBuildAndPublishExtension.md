@@ -22,16 +22,38 @@ Once node is installed, install the TFS Cross Platform Command Line Interface (t
 npm i -g tfx-cli
 ```
 
+### Building and testing the task
+
+The task is written in TypeScript and lives in `src/Tasks/Wait`.
+From that directory, run:
+
+```cmd
+npm install
+npm test
+```
+
+`npm test` compiles the TypeScript into the `dist` directory and runs the unit tests.
+
+To run the task locally, provide its inputs as `INPUT_<NAME>` environment variables. For example, in PowerShell:
+
+```powershell
+$env:INPUT_VALUE = '5'
+$env:INPUT_UNIT = 'seconds'
+node dist/src/index.js
+```
+
+Before packaging, run `npm run package`, which does a clean install, builds and tests the task, and then removes the devDependencies so that only the runtime dependencies are included in the VSIX package.
+
 ### Creating the VSIX package
 
 #### Automated process to create the VSIX package
 
 You can simply run the `New-Version.ps1` script to create a new VSIX package.
-It will prompt you for the version number, and then create the VSIX file for you.
+It will prompt you for the version number, build the task, and then create the VSIX file for you.
 
 #### Manual process to create the VSIX package
 
-Before creating the VSIX package be sure to update the `version` element in the `vss-extension.json` and `task.json` files appropriately.
+Before creating the VSIX package be sure to update the `version` element in the `vss-extension.json` and `task.json` files appropriately, and run `npm run package` from the `src/Tasks/Wait` directory.
 
 To create the VSIX package file, run the following command from the directory containing the `vss-extension.json` file:
 
