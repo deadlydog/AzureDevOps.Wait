@@ -4,22 +4,28 @@
 
 The building and publishing of this extension is done via Azure DevOps pipelines.
 
-Every time a change is committed to the `master` branch [a new build][AzureDevOpsBuildPipelineUrl] is made.
+Every time a change is committed to the `main` branch [a new build][AzureDevOpsBuildPipelineUrl] is made.
 
 If the build succeeds, [a new release][AzureDevOpsReleasePipelineUrl] will automatically be created which will publish the new version to [the Azure DevOps marketplace][ExtensionsAzureDevOpsMarketplaceUrl].
 
-### Required build pipeline change for the TypeScript task
+### YAML build pipeline
 
-**Important:** The task is now written in TypeScript, but the classic build pipeline has not been updated for it yet.
+The build is defined in [`pipelines/azure-devops-build.yaml`](../pipelines/azure-devops-build.yaml).
+It replaces the classic build pipeline, keeping the same `1.2.$(Rev:r)` version numbering, VSIX packaging, and `drop` build artifact, so the existing release pipeline can keep consuming the artifact.
+It runs on a Windows agent for every commit and pull request to the `main` branch, and:
+
+1. Installs Node.js 20.
+1. Runs `npm run package` in `src/Tasks/Wait`, which installs the dependencies, compiles the TypeScript, runs the tests (failing the build if any fail), and removes the devDependencies so only runtime dependencies are packaged.
+1. Packages the extension into a VSIX file using the build number as the extension and task version.
+1. Publishes the VSIX file as the `drop` build artifact.
+
+The packaging steps require the [Azure DevOps Extension Tasks][AzureDevOpsExtensionTasksUrl] extension to be installed in the Azure DevOps organization.
+
+To start using it, create a new pipeline in Azure DevOps from the existing YAML file `pipelines/azure-devops-build.yaml` in this repository, then update the release pipeline's artifact source to point to the new build pipeline and disable the classic one.
+
+**Important:** Until that is done, the classic build pipeline is still the one that runs.
 It still runs the old `Pester Test Runner` step and packages the VSIX without building the task, so the VSIX it produces would not contain the compiled task or its `node_modules` dependencies.
-Do not rely on the automated build and release to publish working versions of the extension until the pipeline has been updated as follows:
-
-1. Remove the `Pester Test Runner` step (there are no longer any Pester tests).
-1. Before the `Package Extension into a VSIX file` step, add an `npm` step (or a command line step) that runs `npm run package` with the working directory set to `src\Tasks\Wait`.
-   This installs the dependencies, compiles the TypeScript, runs the tests (failing the build if any fail), and removes the devDependencies so only runtime dependencies are packaged.
-   The agent needs Node.js 20 or later; add a `Use Node.js` step before it if required.
-
-The `Publish Test Results` and `Publish code coverage` steps were for the Pester output and no longer find any files; they can be removed.
+Do not rely on the automated build and release to publish working versions of the extension until the YAML pipeline is set up.
 
 ## Manual builds and deployments
 
@@ -84,3 +90,4 @@ You can manually publish a new version of the extension at [my personal Azure De
 [AzureDevOpsReleasePipelineUrl]: https://dev.azure.com/deadlydog/OpenSource/_release?view=all&definitionId=3
 [MyAzureDevOpsMarketplaceExtensionsUrl]: https://marketplace.visualstudio.com/manage/publishers/deadlydog
 [NodeJsDownloadUrl]: https://nodejs.org/en/download
+[AzureDevOpsExtensionTasksUrl]: https://marketplace.visualstudio.com/items?itemName=ms-devlabs.vsts-developer-tools-build-tasks

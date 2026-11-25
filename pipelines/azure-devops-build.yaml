@@ -1,0 +1,63 @@
+# Builds the Wait extension and publishes the VSIX file as a build artifact.
+# Mirrors the classic build pipeline (definition 21), with the Pester step replaced by the TypeScript build and tests.
+
+name: 1.2.$(Rev:r)
+
+trigger:
+  batch: true
+  branches:
+    include:
+      - main
+
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: windows-latest
+
+variables:
+  ExtensionManifestDirectory: src
+  ExtensionManifestFileName: vss-extension.json
+  VsixFileName: deadlydog.WaitBuildAndReleaseTask.vsix
+  TaskDirectory: src/Tasks/Wait
+
+steps:
+  - checkout: self
+    clean: true
+
+  - task: UseNode@1
+    displayName: Use Node.js 20.x
+    inputs:
+      version: 20.x
+
+  - task: Npm@1
+    displayName: Build and test the Wait task (npm run package)
+    inputs:
+      command: custom
+      workingDir: $(TaskDirectory)
+      customCommand: run package
+
+  - task: TfxInstaller@5
+    displayName: Use Node CLI for Azure DevOps (tfx-cli)
+
+  - task: PackageAzureDevOpsExtension@5
+    displayName: Package Extension into a VSIX file
+    inputs:
+      rootFolder: $(ExtensionManifestDirectory)
+      patternManifest: $(ExtensionManifestFileName)
+      outputPath: $(Build.ArtifactStagingDirectory)/$(VsixFileName)
+      outputVariable: Extension.OutputPath
+      extensionVersion: $(Build.BuildNumber)
+      updateTasksVersion: true
+      updateTasksVersionType: major
+      extensionVisibility: default
+      extensionPricing: default
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: drop'
+    inputs:
+      PathtoPublish: $(Build.ArtifactStagingDirectory)
+      ArtifactName: drop
+      publishLocation: Container
