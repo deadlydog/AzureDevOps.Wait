@@ -1,0 +1,22 @@
+{
+  "name": "wait-task",
+  "version": "0.0.0",
+  "description": "Azure Pipelines task that suspends the pipeline for the specified amount of time.",
+  "private": true,
+  "main": "dist/src/index.js",
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build": "npm run clean && tsc -p .",
+    "test": "npm run build && node --test dist/tests/",
+    "package": "npm ci && npm test && npm prune --omit=dev"
+  },
+  "author": "Daniel Schroeder",
+  "license": "MIT",
+  "dependencies": {
+    "azure-pipelines-task-lib": "^5.283.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "typescript": "^5.9.3"
+  }
+}

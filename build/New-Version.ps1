@@ -12,12 +12,36 @@ Process
 
 	Set-VersionNumberInFiles -extensionJsonFilePath $extensionJsonFilePath -taskJsonFilePaths $taskJsonFilePaths
 
+	Build-Tasks -taskJsonFilePaths $taskJsonFilePaths
+
 	New-VsixPackage -extensionJsonFilePath $extensionJsonFilePath
 }
 
 Begin
 {
 	[string] $THIS_SCRIPTS_DIRECTORY_PATH = $PSScriptRoot
+
+	# Compiles the TypeScript, runs the tests, and removes devDependencies so only runtime files are packaged.
+	function Build-Tasks([string[]] $taskJsonFilePaths)
+	{
+		$taskJsonFilePaths | ForEach-Object {
+			[string] $taskDirectoryPath = Split-Path -Path $_ -Parent
+			Write-Verbose "Building the task in '$taskDirectoryPath'." -Verbose
+			Push-Location -Path $taskDirectoryPath
+			try
+			{
+				npm run package
+				if ($LASTEXITCODE -ne 0)
+				{
+					throw "Building the task in '$taskDirectoryPath' failed."
+				}
+			}
+			finally
+			{
+				Pop-Location
+			}
+		}
+	}
 
 	function Confirm-RequiredFilesExist([string] $extensionJsonFilePath, [string[]] $taskJsonFilePaths)
 	{

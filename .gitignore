@@ -1,5 +1,10 @@
 *.vsix
 
+### Node / TypeScript ###
+node_modules/
+dist/
+.taskkey
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json

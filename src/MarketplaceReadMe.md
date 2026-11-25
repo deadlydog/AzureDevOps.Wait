@@ -2,7 +2,7 @@
 
 This [Azure DevOps (i.e. TFS) extension][ExtensionInAzureDevOpsMarketplaceUrl] provides a task that can be used to pause the Build or Release pipeline for the specified amount of time.
 
-**Note:** This extension currently only supports *Windows* agents, but there are plans to also support Linux and Mac agents in the future.
+The task runs on Node.js, so it works on *Windows*, *Linux*, and *macOS* agents.
 
 If you find this extension useful, please [rate and review it][ExtensionRatingAndReviewInAzureDevOpsMarketplaceUrl].
 
